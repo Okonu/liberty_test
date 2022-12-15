@@ -1,0 +1,24 @@
+<% try { %>
+    <%- include('partials/header', {user: [firstName, lastName]}) %>
+  <%} catch(error) { %>
+    <%- include('partials/header')%>
+  <%} %>
+
+  <div class="list-group">
+      <% foundSaccos.forEach(function(sacco){ %>
+        <form method="post" action="/update/<%=sacco._id%>">
+
+        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+
+            <h2>Sacco Officials:<%=sacco.saccoInfo%></h2><br/>
+            <h2>Sacco Station: <%=sacco.saccoStation%></h2><br/>
+            <h2>Charge Amount: <%=sacco.saccoCharge%></h2>
+
+                <button value="edit" name="update" type="submit" class=" mb-1 btn btn-secondary">Edit</button>
+                <button value="delete" name ="update" type="submit" class="mb-1 btn btn-danger">Remove</button>  
+        </a>
+    </form>
+     <% }) %>
+
+    
+  </div>

@@ -1,0 +1,26 @@
+<% try { %>
+    <%- include('partials/header', {user: [firstName, lastName]}) %>
+  <%} catch(error) { %>
+    <%- include('partials/header')%>
+  <%} %>
+
+  <form class="sacco-submission" action="/<%=saccoId%>/sacco-update" method="post">
+    
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Officials</label>
+        <textarea name="saccoInfo" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="i.e Enter Name and Role."><%=sacco.saccoInfo%></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Stations</label>
+        <textarea name="saccoStation" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="i.e Enter Station Names"><%=sacco.saccoStation%></textarea>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Charges</label>
+        <textarea name="saccoCharge" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="i.e Enter Charge Amount"><%=sacco.saccoCharge%></textarea>
+    </div>
+    <div class="form-group">
+        <button type ="submit" class="btn btn-secondary">Submit</button>
+        <a href="/"><button type="button" class="btn btn-danger">Cancel</button></a>
+    </div>
+    
+</form>

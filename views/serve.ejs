@@ -1,0 +1,29 @@
+<% try { %>
+<%- include('partials/header', {user: [firstName, lastName]}) %>
+<%} catch(error) { %>
+<%- include('partials/header')%>
+<%} %>
+
+
+<head>
+    <link href='css/main.css' rel='stylesheet' />
+    <script src='js/main.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            var getSaccos = <%- JSON.stringify(foundSaccos) %>;
+
+        });
+    </script>
+
+</head>
+<div class="left-side">
+    <h1><%=appTitle%></h1>
+    <a href="/<%=appTitle%>/sacco-submission"><button type="button" class="btn btn-secondary">Add Details</button></a>
+    <a href="/apps/<%=appTitle%>/saccos"><button type="button" class="btn btn-secondary">Edit Sacco Details</button></a>
+    <a href="/apps/<%=appTitle%>/delete"><button type="button" class="btn btn-danger">Delete Saccos</button></a>
+</div>
+<div id='calendar'></div>

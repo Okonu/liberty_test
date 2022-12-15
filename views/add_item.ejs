@@ -1,0 +1,17 @@
+<% try { %>
+    <%- include('partials/header', {user: [firstName, lastName]}) %>
+  <%} catch(error) { %>
+    <%- include('partials/header')%>
+  <%} %>
+
+<form style="padding: 5% 30%;" method="post" action="/add_item">
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+        <input name="addedTitle" type="text" id="form6Example4" class="form-control"
+            placeholder="e.g., Name of Sacco " />
+        <label class="form-label" for="form6Example4">Name</label>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+</form>
